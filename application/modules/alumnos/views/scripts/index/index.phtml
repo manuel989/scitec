@@ -1,0 +1,9 @@
+<?php
+$this->title = "Alumnos";
+$this->headTitle($this->title);
+
+echo "<h1>" . $this->title . "</h1>";
+
+$infoUsuario = Zend_Auth::getInstance()->getIdentity();
+echo "<h6>Bienvenido " . $infoUsuario->log_nickname . "</h6>";
+?>

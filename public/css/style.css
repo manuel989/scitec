@@ -1,0 +1,134 @@
+body ,html {
+	margin: 0 5px;
+	font-family: Verdana, sans-serif;
+	background-color: white;
+}
+
+h1 {
+	font-size: 1.8em;
+	color: #00A6D1;
+	//margin-left:150px;
+	text-align: center;
+	text-shadow: 1px -1px 4px black;
+}
+
+/* Links */
+a {
+	font-variant: small-caps;
+	font-weight: bold;
+	text-decoration: none;
+	color: purple;	
+}
+
+a:hover {
+	color: green;
+}
+
+/* Table */
+th {
+	text-align: left;
+	font-size: 12px;
+	color:#225;
+	text-shadow: 0px -1px 4px gray;
+}
+
+td {
+	font-size: 11px;
+}
+
+table {
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	border-width: 2px;
+	border-color: black;
+	border-style: double;
+}
+
+td, th {
+	padding-right: 5px;
+}
+
+/* Style form */
+form dt {
+	margin-right: 10px;
+	text-align: right;
+	width: 140px;
+	display: block;
+	float: left;
+	clear: left;
+	font-size: 10px;
+}
+
+form dd {
+	margin-left: 0;
+	float:left;
+}
+
+#wrap {
+	background-color: #eee;
+	width: 900px;
+	margin: 0 auto;
+}
+
+#banner{
+	background-color: white;
+	width: 900px;
+	height: 200px;
+	background-image: url(../images/banner.png);
+}
+
+#contenido {
+	padding: 30px 50px;
+	//padding-bottom:30px;
+	background-color: #eee;
+}
+
+.errors {
+	font-size: 9px;
+	color: #ff0008;
+	float: none;
+}
+
+#footer, #footer a {
+	font-variant: small-caps;
+	font-family: Verdana, Arial, sans-serif;
+	margin-bottom: 20px;
+	background-color: #bbb;
+	text-align: center;
+	width: 900px;
+	height: 60px;
+	color: black;
+	font-size: 10px;
+	padding-top: 35px;
+}
+
+.zend_form {
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 55px;
+	margin-top: 55px;
+	padding: 0px;
+	width: 460px;
+	overflow: auto;
+}
+
+#back {
+	font-variant: small-caps;
+	text-align: right;
+}
+
+form input {
+	font-size: 12px;
+	width: 120px;
+}
+
+p {
+	font-size: 12px;
+}
+
+.zend_form label {
+	font-size: 12px;
+}
+

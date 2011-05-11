@@ -1,0 +1,43 @@
+<?php
+/* 
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+$this->title = 'Resultados de la busqueda';
+$this->headTitle($this->title);
+
+echo $this->nombre;
+?>
+<div id="resultados">
+    <table>
+        <tr>
+            <th>Número de control</th>
+            <th>Nombre</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+            <th>Semestre</th>
+            <th>Grupo</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+        </tr>
+        <?php //foreach ($this->alumnos as alumno) : ?>
+        <tr>
+            <td><?php echo $this->escape($alumno->num_control); ?></td>
+            <td><?php echo $this->escape($alumno->nombre); ?></td>
+            <td><?php echo $this->escape($alumno->apellido_pat); ?></td>
+            <td><?php echo $this->escape($alumno->apellido_mat); ?></td>
+            <td><?php echo $this->escape($alumno->semestre); ?></td>
+            <td><?php echo $this->escape($alumno->grupo); ?></td>
+            <?php foreach ($this->alumnos as $alumno ) :?>
+            <td><a href="<?php echo $this->url(array(
+                'controller' => 'alumnos',
+                'action' => 'delete',
+                'num_control' => $alumno->num_control)); ?>">Editar</a></td>
+            <td><a href="<?php echo $this->url(array(
+                'controller' => 'alumnos',
+                'action' => 'edit',
+                'num_control' => $alumno->num_control)); ?>">Eliminar</a></td>
+            <?php endforeach ?>
+        </tr>
+    </table>
+</div>

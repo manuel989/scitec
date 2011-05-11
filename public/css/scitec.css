@@ -1,0 +1,155 @@
+/* Body */
+
+html body {
+	font-size: 13px;
+	background-color: #eee;
+	//background-image: url(../img/background.jpg);
+	background-repeat: repeat-x;
+	font-family: Verdana, sans-serif;
+	text-align: justify;
+}
+
+#wrapper {
+	background-color: #fff;
+	margin-top: 10px;
+}
+
+#logo, #title {
+    height: 120px;
+}
+
+/* Menu  */
+#topnav {
+    height: 40px;
+    background-image: url(../img/menuBg.png);
+    background-repeat: repeat-x;
+    padding-left: 20px;
+    list-style: none;
+}
+
+/* Barra ixquierda */
+
+#rightBar {
+    background-color: #dbdbdb;
+}
+
+/* Contenido */
+#content {
+    background-color: #fff;
+}
+
+/* Footer */
+#footer {
+    margin-top: 20px;
+    color: #e5e5e5;
+    padding-left: 20px;
+    height: 100px;
+    text-align: center;
+    background-color: #474747;
+}
+
+/* Banner */
+#logo {
+	background-image: url(../img/Logo.png);
+	background-repeat: no-repeat;
+}
+
+#banner {
+	margin-top: 10px;
+}
+
+/* Forms */
+
+.zend_form {
+	padding-top: 20px;
+	padding-left: -10px;
+	width: 460px;
+	overflow: auto;
+}
+
+#back {
+	font-variant: small-caps;
+	text-align: right;
+}
+
+form input {
+	font-size: 12px;
+	width: 120px;
+}
+
+p {
+	font-size: 7px;
+}
+
+.zend_form label {
+	font-size: 10px;
+}
+
+#rightBar , #content {
+	margin-top: 10px;
+}
+
+form dt {
+	margin-right: 10px;
+	text-align: right;
+	width: 140px;
+	display: block;
+	float: left;
+	clear: left;
+	font-size: 10px;
+}
+
+form dd {
+	margin-left: 0;
+	float:left;
+}
+
+/* Table */
+th {
+	text-align: left;
+	font-size: 9px;
+	color:#225;
+	text-shadow: 0px -1px 4px gray;
+}
+
+td {
+	font-size: 8px;
+}
+
+table {
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	border-width: 2px;
+	border-color: black;
+	border-style: double;
+}
+
+td, th {
+	padding-right: 5px;
+}
+
+/* Links */
+a {
+	font-variant: small-caps;
+	font-weight: bold;
+	text-decoration: none;
+	color: #dedde5;	
+}
+
+a:hover {
+	color: black;
+}
+
+/* Errors */
+
+.errors {
+	font-size: 9px;
+	color: #ff0008;
+	float: none;
+}
+
+#topnav ul li {
+	display: inline;
+}

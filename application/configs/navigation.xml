@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configdata>
+
+    <nav>
+        <home>
+            <label>Inicio</label>
+            <module>default</module>
+            <controller>index</controller>
+            <action>index</action>
+			<id>home</id>
+        </home>
+        <alumnos>
+            <label>Alumnos</label>
+            <module>serviciosEscolares</module>
+            <controller>alumnos</controller>
+            <action>index</action>
+            <resource></resource>
+            <privilege></privilege>
+			<id>alumnos</id>
+            <pages>
+                <altas>
+                    <label>Altas</label>
+                    <module>serviciosEscolares</module>
+                    <controller>alumnos</controller>
+                    <action>add</action>
+                    <resource></resource>
+                    <privilege></privilege>
+				</altas>
+				<baja>
+                    <label>Busqueda</label>
+                    <module>serviciosEscolares</module>
+                    <controller>alumnos</controller>
+                    <action>edit</action>
+                    <resource></resource>
+                    <privilege></privilege>
+				</baja>
+			</pages>
+        </alumnos>
+            <pronabes>
+                <label>Avisos</label>
+                <module>serviciosEscolares</module>
+                <controller>alumnos</controller>
+                <action>noticias</action>
+                <resource></resource>
+                <privilege></privilege>
+            </pronabes>
+            <login>
+                <label>Login</label>
+                <module>default</module>
+                <controller>index</controller>
+                <action>login</action>
+                <resource></resource>
+                <privilege></privilege>
+            </login>
+            <logout>
+                <label>Log out</label>
+                <module>default</module>
+                <controller>index</controller>
+                <action>exit</action>
+                <resource></resource>
+                <privilege></privilege>
+            </logout>
+    </nav>
+
+</configdata>
