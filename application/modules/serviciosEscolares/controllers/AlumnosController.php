@@ -15,12 +15,18 @@ class ServiciosEscolares_AlumnosController extends Zend_Controller_Action
 
     public function addAction()
     {
-        $form = new Application_Form_StudentAdd();
-		
-        $this->view->form = $form;
+        $my_acl = Zend_Registry::get('acl');
+        $this->_application = new Zend_Session_Namespace('scitec');
+        $rol =  $this->_application->currentRole;
+        
+        if($my_acl->isAllowed($rol, 'serviciosEscolares')){
+            
+            $form = new Application_Form_StudentAdd();
 
-        if ($this->getRequest()->isPost()){
-            $formData = $this->getRequest()->getPost();
+            $this->view->form = $form;
+
+            if ($this->getRequest()->isPost()){
+                $formData = $this->getRequest()->getPost();
 
             if ($form->isValid($formData)){
                 // Agregaremos al usuario con los datos obtenidos en nuestro formulario
@@ -72,6 +78,15 @@ class ServiciosEscolares_AlumnosController extends Zend_Controller_Action
                 $form->populate($formData);
             }
         }
+        } else {
+            $this->_helper->redirector('error');
+        }
+        
+    }
+
+    public function errorAction()
+    {
+        
     }
 
     public function addedAction()
@@ -81,30 +96,42 @@ class ServiciosEscolares_AlumnosController extends Zend_Controller_Action
 
     public function searchAction()
     {
-        $form = new Application_Form_BusquedaAlumno();
-        $this->view->form = $form;
+        // Agregamos el namespace
+        $this->_application = new Zend_Session_Namespace('scitec');
+        $rol = $this->_application->currentRole;
+        // Agregamos nuestra acl
+        $my_acl = Zend_Registry::get('acl');
 
-        if($this->getRequest()->isPost())
-        {
-            $formData = $this->getRequest()->getPost();
+        if ($my_acl->isAllowed($rol, 'serviciosEscolares')){
+            $form = new Application_Form_BusquedaAlumno();
+            $this->view->form = $form;
 
-            if($form->isValid($formData))
+            if($this->getRequest()->isPost())
             {
-                //Datos validos y procedemos con la busqueda...
-                $id = $form->getValue('nombre');
+                $formData = $this->getRequest()->getPost();
 
-                $alumno = new Application_Model_DbTable_Students();
-                $alumno->getStudent($id);
-                //echo "ID " . Zend_Debug::dump($alumno);
-                $this->render('results');
-                $this->nombre = $id;
+                if($form->isValid($formData))
+                {
+                    //Datos validos y procedemos con la busqueda...
+                    $id = $form->getValue('nombre');
+
+                    $alumno = new Application_Model_DbTable_Students();
+                    $alumno->getStudent($id);
+                    //echo "ID " . Zend_Debug::dump($alumno);
+                    $this->render('results');
+                    $this->nombre = $id;
+                }
+                else
+                {
+                    // Si no son validos regresamos al formulario...
+                    $form->populate($formData);
+                }
             }
-            else
-            {
-                // Si no son validos regresamos al formulario...
-                $form->populate($formData);
-            }
+            
+        } else {
+            $this->_helper->redirector('error');
         }
+
     }
 
     public function editAction()

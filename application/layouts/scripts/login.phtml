@@ -1,0 +1,59 @@
+<?php
+echo $this->doctype();
+$this->placeholder('nombre')->set("Jorge García Miguel");
+$this->placeholder('carrera')->set("Ing. Sistemas Computacionales");
+$this->placeholder('semestre')->set("Octavo");
+?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <?php echo $this->headMeta(); ?>
+        <?php echo $this->headTitle(); ?>
+        <?php echo $this->headLink()->prependStylesheet($this->baseUrl() . "/css/reset.css"); ?>
+        <?php echo $this->headLink()->prependStylesheet($this->baseUrl() . "/css/text.css"); ?>
+        <?php echo $this->headLink()->prependStylesheet($this->baseUrl() . "/css/960.css"); ?>
+        <?php echo $this->headLink()->prependStylesheet($this->baseUrl() . "/css/scitec_login.css"); ?>
+        <?php echo $this->headLink()->prependStylesheet($this->baseUrl() . "/css/defaultmenu.css"); ?>
+
+        <script lenguage="javascript" src="<?php echo $this->baseUrl() . "/js/jquery.js" ?>"></script>
+        <script>
+            $(document).ready(function(){
+
+                var ancho = $('#content').width();
+                var largo = $('#content').height();
+
+
+                $('#error').css('z-index', 9999);
+                $('#error').css('top', largo/2-$('#error').height()/2);
+                $('#error').css('left', ancho/2-$('#error').width()/2);
+                $('#error').fadeIn();
+
+                $('body').click(function(){
+                    $('#error').fadeOut();
+                });
+            });
+        </script>
+    </head>
+    <body>
+
+        <div class="container_12" id="head">
+            <div id="logo" class="grid_2 suffix_10">
+            </div>
+            <div class="clear"></div>
+			<div class="grid_12" id="menu">
+                <div id="topnav">
+                    <?php echo $this->navigation(); ?>
+                </div>
+            </div>
+        </div>
+
+        <div class="container_12" id="wrapper">
+
+            <div class="grid_12" id="content">
+                <div id="contenido">
+                    <?php echo $this->layout()->content; ?>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -5,7 +5,7 @@ class Application_Form_StudentAdd extends Zend_Form
 	{
             $this->setName('Alumno');
 		
-            $num_control = new Zend_Form_Element('num_control');
+            $num_control = new Zend_Form_Element_Text('num_control');
             $num_control->setLabel('Número de control: ')
                         ->setAttrib('size', 20)
                         ->setAttrib('maxLength', 9)
@@ -93,6 +93,9 @@ class Application_Form_StudentAdd extends Zend_Form
                           ->addValidator('StringLength', true, array(5,5))
                           ->setRequired(false);
 
+            $telefono_alum = new Zend_Form_Element_Text('telefono_alum');
+            $telefono_alum->setLabel('Teléfono');
+
             $poblacion = new Zend_Form_Element_Text('poblacion');
             $poblacion->setLabel('Población: ')
                       ->setAttrib('size', 20)
@@ -157,7 +160,6 @@ class Application_Form_StudentAdd extends Zend_Form
                         ->addMultiOption('regular', 'Regular')
                         ->addMultiOption('irregular', 'Irregular');
 
-
             $elements = array($num_control,
                               $nombre,
                               $apellido_paterno,
@@ -170,7 +172,6 @@ class Application_Form_StudentAdd extends Zend_Form
                               $colonia,
                               $codigo_postal,
                               $poblacion,
-                              $num_telefono,
                               $semestre,
                               $grupo,
                               $turno,
@@ -179,6 +180,7 @@ class Application_Form_StudentAdd extends Zend_Form
                               $submit,
                               $status,
                               $tipo_alumno,
+                              $telefono_alum
                 );
 
             // Agregamos los elementos al formulario
@@ -197,7 +199,7 @@ class Application_Form_StudentAdd extends Zend_Form
                                         $mes_nacimiento,
                                         $agno_nacimiento,
                                         $grupo_sanguineo,
-                                        $num_telefono,
+                                        $telefono_alum,
                                         $e_mail,
                                         $foto,
                                         $submit
@@ -207,19 +209,6 @@ class Application_Form_StudentAdd extends Zend_Form
                                        'legend' => 'Información General'
                                        )
                     );
-
-            /*$general = $this->getDisplayGroup('general');
-            $general->setDecorators(array(
-                'FormElements',
-                'Fieldset',
-                array('HtmlTag',
-                      array(
-                           'tag' => 'div',
-                           'style' => 'width:50%;;float:left;;border: solid gray;
-                                       padding:5px 20px;'
-                     )
-                )
-            ));*/
 
             // Dirección del contacto
             $this->addDisplayGroup(array(
@@ -234,20 +223,6 @@ class Application_Form_StudentAdd extends Zend_Form
                                    )
                     );
 
-            /*$address = $this->getDisplayGroup('address');
-            $address->setDecorators(array(
-                'FormElements',
-                'Fieldset',
-                array(
-                    'HtmlTag',
-                    array(
-                        'tag' => 'div',
-                        'style' => 'padding: 5px 20px;;border: solid gray;
-                                    width:39%;float:right;'
-                    )
-                )
-            ));*/
-
             // Información escolar
             $this->addDisplayGroup(array(
                                         $semestre,
@@ -261,19 +236,6 @@ class Application_Form_StudentAdd extends Zend_Form
                                             'legend' => 'Información Escolar'
                                             )
                     );
-            /*$school = $this->getDisplayGroup('school');
-            $school->setDecorators(array(
-                'FormElements',
-                'Fieldset',
-                array(
-                    'HtmlTag',
-                    array(
-                        'tag' => 'div',
-                        'style' => 'border: solid gray; width:39%;
-                                    float: right; padding: 5px 20px;margin-top:9px;'
-                    )
-                )
-            ));*/
 	}
 }
 ?>

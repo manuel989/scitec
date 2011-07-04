@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configdata>
+
+    <nav>
+
+        <!-- Estudiantes -->
+        <semestreactual>
+            <!-- Semestre actual -->
+            <label>Semestre Actual</label>
+            <module>estudiantes</module>
+            <controller>semestreactual</controller>
+            <action>inicio</action>
+            <pages>
+                <calificaciones>
+                    <label>Calificaciones</label>
+                    <module>estudiantes</module>
+                    <controller>semestreactual</controller>
+                    <action>calificaciones</action>
+                </calificaciones>
+                <horarios>
+                    <label>Horario</label>
+                    <module>estudiantes</module>
+                    <controller>semestreactual</controller>
+                    <action>horario</action>
+                </horarios>
+                <materias>
+                    <label>Materias</label>
+                    <module>estudiantes</module>
+                    <controller>semestreactual</controller>
+                    <action>materias</action>
+                </materias>
+                <evaluaciond>
+                    <labe>Evaluación</labe>
+                    <module>estudiantes</module>
+                    <controller>semestreactual</controller>
+                    <action>evaluaciondocente</action>
+                </evaluaciond>
+            </pages>
+
+            <!-- Fin de semestre actual-->
+
+        </semestreactual>
+        <generales>
+            <!-- Generales -->
+
+            <label>Generales</label>
+            <module>estudiantes</module>
+            <controller>general</controller>
+            <action>inicio</action>
+            <pages>
+                <iniciog>
+                    <label>Inicio</label>
+                    <module>estudiantes</module>
+                    <controller>general</controller>
+                    <action>inicio</action>
+                </iniciog>
+                <micardex>
+                    <label>Mi cardex</label>
+                    <module>estudiantes</module>
+                    <controller>general</controller>
+                    <action>micardex</action>
+                </micardex>
+                <documentos>
+                    <label>Documentos</label>
+                    <module>estudiantes</module>
+                    <controller>general</controller>
+                    <action>documentos</action>
+                </documentos>
+                <serviciosoc>
+                    <label>Servicio Social</label>
+                    <module>estudiantes</module>
+                    <controller>general</controller>
+                    <action>serviciosocial</action>
+                </serviciosoc>
+                <residencias>
+                    <label>Residencia</label>
+                    <module>estudiantes</module>
+                    <controller>general</controller>
+                    <action>residencias</action>
+                </residencias>
+                <becas>
+                    <label>Becas</label>
+                    <module>estudiantes</module>
+                    <controller>general</controller>
+                    <action>becas</action>
+                </becas>
+                <reticula>
+                    <label>Retícula</label>
+                    <module>estudiantes</module>
+                    <controller>general</controller>
+                    <action>reticula</action>
+                </reticula>
+            </pages>
+        </generales>
+        <!-- Fin de Generales -->
+
+        <salirdoc>
+            <label>Salir</label>
+            <module>default</module>
+            <controller>index</controller>
+            <action>salir</action>
+        </salirdoc>
+    </nav>
+
+</configdata>

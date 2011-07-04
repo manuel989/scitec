@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : defaultnavigation.xml
+    Created on : 5 de junio de 2011, 17:37
+    Author     : Punker
+    Description:
+        Purpose of the document follows.
+-->
+
+<configdata>
+    <nav>
+        <iniciodefault>
+            <label>Inicio</label>
+            <module>default</module>
+            <controller>index</controller>
+            <action>index</action>
+            <id>home</id>
+        </iniciodefault>
+        <aspirantes>
+            <label>Aspirantes</label>
+            <module>default</module>
+            <controller>index</controller>
+            <action>aspirante</action>
+            <id>asp</id>
+            <pages>
+                <proing>
+                    <label>Proceso de Ingreso</label>
+                    <module>default</module>
+                    <controller>index</controller>
+                    <action>procesoing</action>
+                </proing>
+                <propedutico>
+                    <label>Propedeutico</label>
+                    <module>default</module>
+                    <controller>index</controller>
+                    <action>propedeutico</action>
+                </propedutico>
+
+            </pages>
+        </aspirantes>
+        <entrar>
+            <label>Entrar</label>
+            <module>default</module>
+            <controller>index</controller>
+            <action>entrar</action>
+            <id>enter</id>
+        </entrar>
+    </nav>
+</configdata>

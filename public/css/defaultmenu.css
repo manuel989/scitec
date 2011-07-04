@@ -1,0 +1,55 @@
+/* @override http://www.scitec.edu.mx/css/defaultmenu.css */
+
+/* Se arreglará para crear un efecto de sprite en cada uno de los elementos */
+#topnav{
+    height: 50px;
+}
+
+ul.navigation{
+	list-style: none;
+	padding-top: 17px;
+	z-index: 30;
+}
+
+ul.navigation li{
+	position: relative;
+	display: inline;
+}
+
+ul.navigation li a{
+	padding-top: 16px;
+	padding-bottom: 16px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+ul.navigation li a:link, ul.navigation li a:visited{
+	color: white;
+	text-decoration: none;
+}
+
+ul.navigation li a:hover{
+	color: black;
+}
+
+ul.navigation ul{
+	background-color: #9df6ff;
+	position: absolute;
+	display: block;
+	top: 34px;
+	left: 0px;
+	color: black;
+	z-index: 40;
+	list-style: none;
+	font-size: 11px;
+}
+
+ul.navigation a:hover ul{
+	display: block;
+	top: 50px;
+	left: 0px;
+}
+
+ul.navigation ul li a:link, ul.navigation ul li a:visited{
+	color: black;
+}

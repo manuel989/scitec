@@ -1,0 +1,104 @@
+<?php
+    echo $this->doctype();
+    $this->placeholder('nombre')->set("Jorge García Miguel");
+    $this->placeholder('carrera')->set("Ing. Sistemas Computacionales");
+    $this->placeholder('semestre')->set("Octavo");
+?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <?php echo $this->headMeta(); ?>
+        <?php echo $this->headTitle(); ?>
+        <?php echo $this->headLink()->prependStylesheet($this->baseUrl() . "/css/reset.css"); ?>
+        <?php echo $this->headLink()->prependStylesheet($this->baseUrl() . "/css/text.css"); ?>
+        <?php echo $this->headLink()->prependStylesheet($this->baseUrl() . "/css/960.css"); ?>
+        <?= $this->headLink()->prependStylesheet($this->baseUrl() . "/css/scitec_alumnos.css" ); ?>
+		<?php echo $this->headLink()->prependStylesheet($this->baseUrl() . "/css/menu.css" ); ?>
+		
+		<script lenguage="javascript" src="<?php echo $this->baseUrl() . "/js/jquery.js" ?>"></script>
+		<script lenguage="javascript">
+                    /*function initMenu(){
+                        $('#menu ul').hide();
+			$('#menu ul:first').show();
+			$('#menu li a').click(
+                            function(){
+                                var checkElement = $(this).next();
+                                if((checkelement.is('ul')) && (checkelement.is(':visible'))){
+                                    return false;
+                                }
+                                if((checkElement.is('ul')) && (!checkElement.is(':visible'))){
+                                    $('#menu ul visible').slideUp('normal');
+                                    checkElement.slidedown('normal');
+                                    return false;
+                                }
+                            }
+			)
+                    }
+			
+                    $(document).ready(function(){initMenu();});*/
+		</script>
+		
+    </head>
+    <body>
+        <div class="container_12" id="banner">
+            <div class="grid_9 suffix_3" id="logo"></div>
+
+            <div class="clear"></div>
+        </div>
+
+		<div class="container_12" id="breadcrumb">
+			<div class="grid_12" id="bred">
+                <?php
+                    echo $this->navigation()->breadcrumbs()->setLinkLast(false)->setMinDepth(0)->render();
+                ?>
+            </div>
+			<div class="clear"></div>
+		</div>
+
+
+
+        <div class="container_12" id="wrapper">
+
+            <div class="grid_4" id="leftpanel">
+                
+                <div id="head_titlePanel"><p>Información</p></div>
+
+				<div id="content_leftpanel">
+                    <b>Loggeado: </b>
+                    <?php
+                        echo $this->placeholder('login');
+                        echo $this->placeholder('tipo');
+                    ?>
+					<br></br>
+					<b>Nombre:</b> <?= $this->placeholder('nombre'); ?><br></br>
+					<b>Carrera:</b> <?= $this->placeholder('carrera'); ?><br></br>
+					<b>Semestre:</b> <?= $this->placeholder('semestre'); ?>
+				</div>
+			
+				<div id="menu">
+                    <?php
+                        $my_acl = Zend_Registry::get('acl');
+						echo $this->navigation()->menu();
+                    ?>
+				</div>
+				
+            </div>
+
+			<div class="grid_8" id="content">
+				<!--Contenido-->
+				<div id="contenido">
+					<?php echo $this->layout()->content; ?>
+				</div>
+         	</div>
+
+            <div class="clear"></div>
+
+			<div class="grid_12" id="footer">
+	        	<p>Tema creado por: <a href="http://www.wordpress.com/georgemcjackson">GMJ</a><br>
+				Licencia Libre
+				</p>
+			</div>
+		</div>
+
+    </body>
+</html>

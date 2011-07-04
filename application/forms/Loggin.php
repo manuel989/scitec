@@ -26,7 +26,7 @@ class Application_Form_Loggin extends Zend_Form
 			   ->addMultiOption('docente', 'Docente')
 			   ->addMultiOption('directivo', 'Directivo')
                ->addMultiOption('servicioEscolar', 'Servicios Escolares')
-			   ->addMultiOption('administrativo', 'Administrativo');
+			   ->addMultiOption('administrador', 'Administrativo');
 
 		$registerDay = new Zend_Form_Element_Hidden('fechaRegistro');
 		$registerDay->setLabel('');
@@ -44,7 +44,7 @@ class Application_Form_Loggin extends Zend_Form
                     $registerDay,
                     $submit
                 ), 'login', array(
-                    'legend' => 'Identificate: '
+                    'legend' => 'Identificate'
                 ));
 	}
 }

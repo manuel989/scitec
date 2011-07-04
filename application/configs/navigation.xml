@@ -2,64 +2,221 @@
 <configdata>
 
     <nav>
-        <home>
+        <!-- Inicio -->
+        <iniciodefault>
             <label>Inicio</label>
             <module>default</module>
             <controller>index</controller>
             <action>index</action>
-			<id>home</id>
-        </home>
-        <alumnos>
-            <label>Alumnos</label>
-            <module>serviciosEscolares</module>
-            <controller>alumnos</controller>
-            <action>index</action>
-            <resource></resource>
-            <privilege></privilege>
-			<id>alumnos</id>
+        </iniciodefault>
+        <aspirantes>
+            <label>Aspirantes</label>
+            <module>default</module>
+            <controller>index</controller>
+            <action>aspirante</action>
+            <id>des</id>
             <pages>
-                <altas>
-                    <label>Altas</label>
-                    <module>serviciosEscolares</module>
-                    <controller>alumnos</controller>
-                    <action>add</action>
-                    <resource></resource>
-                    <privilege></privilege>
-				</altas>
-				<baja>
-                    <label>Busqueda</label>
-                    <module>serviciosEscolares</module>
-                    <controller>alumnos</controller>
-                    <action>edit</action>
-                    <resource></resource>
-                    <privilege></privilege>
-				</baja>
-			</pages>
-        </alumnos>
-            <pronabes>
-                <label>Avisos</label>
-                <module>serviciosEscolares</module>
-                <controller>alumnos</controller>
-                <action>noticias</action>
-                <resource></resource>
-                <privilege></privilege>
-            </pronabes>
-            <login>
-                <label>Login</label>
-                <module>default</module>
-                <controller>index</controller>
-                <action>login</action>
-                <resource></resource>
-                <privilege></privilege>
-            </login>
-            <logout>
-                <label>Log out</label>
-                <module>default</module>
-                <controller>index</controller>
-                <action>exit</action>
-                <resource></resource>
-                <privilege></privilege>
-            </logout>
+                <proing>
+                    <label>Proceso de Ingreso</label>
+                    <module>default</module>
+                    <controller>index</controller>
+                    <action>procesoing</action>
+                </proing>
+                <propedutico>
+                    <label>Propedeutico</label>
+                    <module>default</module>
+                    <controller>index</controller>
+                    <action>propedeutico</action>
+                </propedutico>
+                
+            </pages>
+        </aspirantes>
+        <entrar>
+            <label>Entrar</label>
+            <module>default</module>
+            <controller>index</controller>
+            <action>entrar</action>
+            <id>enter</id>
+        </entrar>
+        <!-- Fin de Inicio -->
+
+        <!-- Aspirantes -->
+        <inicioasp>
+            <label>Inicio</label>
+            <module>aspirantes</module>
+            <controller>index</controller>
+            <action>inicio</action>
+        </inicioasp>
+        <ficha>
+            <label>Ficha</label>
+            <module>aspirantes</module>
+            <controller>index</controller>
+            <action>obtenficha</action>
+        </ficha>
+        <guiaest>
+            <label>Guía de Estudios</label>
+            <module>aspirantes</module>
+            <controller>index</controller>
+            <action>guia</action>
+        </guiaest>
+        <!-- Fin de Aspirantes -->
+
+        <!-- Estudiantes -->
+        <semestreactual>
+            <!-- Semestre actual -->
+            <label>Semestre Actual</label>
+            <module>estudiantes</module>
+            <controller>semestreactual</controller>
+            <action>inicio</action>
+			<id>des</id>
+            <pages>
+                <calificaciones>
+                    <label>Calificaciones</label>
+                    <module>estudiantes</module>
+                    <controller>semestreactual</controller>
+                    <action>calificaciones</action>
+                </calificaciones>
+                <horarios>
+                    <label>Horario</label>
+                    <module>estudiantes</module>
+                    <controller>semestreactual</controller>
+                    <action>horario</action>
+                </horarios>
+                <materias>
+                    <label>Materias</label>
+                    <module>estudiantes</module>
+                    <controller>semestreactual</controller>
+                    <action>materias</action>
+                </materias>
+                <evaluaciond>
+                    <label>Evaluación Docente</label>
+                    <module>estudiantes</module>
+                    <controller>semestreactual</controller>
+                    <action>evaluaciondocente</action>
+                </evaluaciond>
+            </pages>
+
+            <!-- Fin de semestre actual-->
+
+        </semestreactual>
+        <generales>
+            <!-- Generales -->
+
+            <label>Generales</label>
+            <module>estudiantes</module>
+            <controller>general</controller>
+            <action>inicio</action>
+			<id>des</id>
+            <pages>
+                <iniciog>
+                    <label>Inicio</label>
+                    <module>estudiantes</module>
+                    <controller>general</controller>
+                    <action>inicio</action>
+                </iniciog>
+                <micardex>
+                    <label>Mi cardex</label>
+                    <module>estudiantes</module>
+                    <controller>general</controller>
+                    <action>micardex</action>
+                </micardex>
+                <documentos>
+                    <label>Documentos</label>
+                    <module>estudiantes</module>
+                    <controller>general</controller>
+                    <action>documentos</action>
+                </documentos>
+                <serviciosoc>
+                    <label>Servicio Social</label>
+                    <module>estudiantes</module>
+                    <controller>general</controller>
+                    <action>serviciosocial</action>
+                </serviciosoc>
+                <residencias>
+                    <label>Residencia</label>
+                    <module>estudiantes</module>
+                    <controller>general</controller>
+                    <action>residencias</action>
+                </residencias>
+                <becas>
+                    <label>Becas</label>
+                    <module>estudiantes</module>
+                    <controller>general</controller>
+                    <action>becas</action>
+                </becas>
+                <reticula>
+                    <label>Retícula</label>
+                    <module>estudiantes</module>
+                    <controller>general</controller>
+                    <action>reticula</action>
+                </reticula>
+            </pages>
+        </generales>
+        <!-- Fin de Generales -->
+
+        <!-- Docentes -->
+        <actualsemdoc>
+            <label>Semestre Actual</label>
+            <module>docentes</module>
+            <controller>semestreactual</controller>
+            <action>inicio</action>
+			<id>des</id>
+            <pages>
+                <misgruposdoc>
+                    <label>Mis grupos</label>
+                    <module>docentes</module>
+                    <controller>semestreactual</controller>
+                    <action>grupos</action>
+                </misgruposdoc>
+                <materiasdoc>
+                    <label>Materias</label>
+                    <module>docentes</module>
+                    <controller>semestreactual</controller>
+                    <action>materias</action>
+                </materiasdoc>
+                <horariodoc>
+                    <label>Horario</label>
+                    <module>docentes</module>
+                    <controller>semestreactual</controller>
+                    <action>horario</action>
+                </horariodoc>
+                <proyectosdoc>
+                    <label>Proyectos</label>
+                    <module>docentes</module>
+                    <controller>semestreactual</controller>
+                    <action>proyectos</action>
+                </proyectosdoc>
+                <resevaluacion>
+                    <label>Resultado de evaluación</label>
+                    <module>docentes</module>
+                    <controller>semestreactual</controller>
+                    <action>resdoc</action>
+                </resevaluacion>
+            </pages>
+        </actualsemdoc>
+
+        <gendoc>
+            <label>General</label>
+            <module>docentes</module>
+            <controller>general</controller>
+            <action>inicio</action>
+			<id>des</id>
+            <pages>
+                <docdoc>
+                    <label>Documentos</label>
+                    <module>docentes</module>
+                    <controller>general</controller>
+                    <action>documentos</action>
+                </docdoc>
+            </pages>
+        </gendoc>
+
+        <salirdoc>
+            <label>Salir</label>
+            <module>default</module>
+            <controller>index</controller>
+            <action>salir</action>
+        </salirdoc>
     </nav>
 
 </configdata>

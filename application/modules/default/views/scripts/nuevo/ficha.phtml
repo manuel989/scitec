@@ -1,0 +1,23 @@
+<?php
+/* 
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+$this->title = 'Obten tu ficha';
+$this->headTitle($this->title);
+
+echo '<h1>' . $this->title . '</h1>';
+
+?>
+
+<div id="nota">
+    <p>
+        Todos los campos con (*) son obligatorios, favor de llenar
+        correctamente todos los campos para poder generar su ficha de registro.
+    </p>
+</div>
+
+<?php
+echo $this->form;
+?>

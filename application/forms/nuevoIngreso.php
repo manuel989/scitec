@@ -3,280 +3,187 @@ class Application_Form_NuevoIngreso extends Zend_Form
 {
     public function init()
     {
-        $this->setName('Aspirante');
+        $this->setName('nuevoIngreso');
 
         $nombre = new Zend_Form_Element_Text('nombre');
-        $nombre->setLabel('Nombre')
+        $nombre->setLabel('Nombre: ')
                ->setRequired(true);
 
-        $apellido_paterno = new Zend_Form_Element_Text('apellidoPaterno');
+        $apellido_paterno = new Zend_Form_Element_Text('apellido_paterno');
         $apellido_paterno->setLabel('Apellido Paterno')
-                         ->setRequired(false);
+                         ->setRequired(true);
 
-        $apellido_materno = new Zend_Form_Element_Text('apellidoMaterno');
-        $apellido_materno->setLabel('Apellido Materno')
-                         ->setRequired(false);
+        $apellido_materno = new Zend_Form_Element_Text('apellido_materno');
+        $apellido_materno->setLabel('Apellido Materno');
 
-        $dia_nacimiento = new Zend_Form_Element_Select('dia_nacimiento');
-        $dia_nacimiento->setLabel("Día de nacimiento");
-        for($cont=1;$cont<=31;$cont++)
-        {
-            if($cont<10)
-            {
-                $dia_nacimiento->addMultiOption('0' . $cont,$cont);
-            }
-            else {
-                $dia_nacimiento->addMultiOption($cont,$cont);
-            }
-        }
+        $estado_civil = new Zend_Form_Element_Text('estado_civil');
+        $estado_civil->setLabel('Estado Civil')
+                     ->setRequired(true);
 
-        $mes_nacimiento = new Zend_Form_Element_Select('mes_nacimiento');
-        $mes_nacimiento->setLabel('Mes de nacimiento')
-                       ->setRequired(false);
-        $mes_nacimiento->addMultiOption('01','Enero')
-                       ->addMultiOption('02','Febrero')
-                       ->addMultiOption('03','Marzo')
-                       ->addMultiOption('04','Abril')
-                       ->addMultiOption('05','Mayo')
-                       ->addMultiOption('06','Junio')
-                       ->addMultiOption('07','Julio')
-                       ->addMultiOption('08','Agosto')
-                       ->addMultiOption('09','Septiembre')
-                       ->addMultiOption('10','Octubre')
-                       ->addMultiOption('11','Noviembre')
-                       ->addMultiOption('12','Diciembre');
-
-        // Terminar de implementar los años
-        $agno_nacimiento = new Zend_Form_Element_Select('agno_nacimiento');
-        $agno_nacimiento->setLabel('Año de nacimiento')
-                        ->setRequired(false);
-        $agno_nacimiento->addMultiOption('1986','1986');
-
-        $sexo = new Zend_Form_Element_Select('sexo');
-        $sexo->setLabel('Sexo')
-             ->setRequired(false);
-        $sexo->addMultiOptions(array('h'=>'Hombre', 'm'=>'Mujer'));
-
-        $curp = new Zend_Form_Element_Text('curp');
-        $curp->setLabel('CURP')
-             ->setRequired(false);
-
-        $nacionalidad = new Zend_Form_Element_Select('nacionalidad');
-        $nacionalidad->setLabel('Nacionalidad')
-                     ->setRequired(false);
-        $nacionalidad->addMultiOptions(array(
-            'mexicana'=>'Mexicana', 'extranjera'=>'Extranjera'
-            ));
-
-        $primera_carrera = new Zend_Form_Element_Select('primera_carrera');
-        $primera_carrera->setLabel('Primera Opción')
-                        ->setRequired(false);
-        $primera_carrera->addMultiOptions(array(
-            'Ing. Administración',
-            'Ing. Desarrollo',
-            'Ing. Sistemas Computacionales'
-            ));
-
-        $segunda_opcion = new Zend_Form_Element_Select('segunda_carrera');
-        $segunda_opcion->setLabel('Segunda Opción')
-                       ->setRequired(false);
-        $segunda_opcion->addMultiOptions(array(
-            'Ing. Administración',
-            'Ing. Desarrollo',
-            'Ing. Sistemas Computacionales'
-        ));
-
-        $escuela_anterior = new Zend_Form_Element_Text('escuela_anterior');
-        $escuela_anterior->setLabel('Nombre')
-                         ->setRequired(false);
-
-        $num_escuela = new Zend_Form_Element_Text('num_escuela');
-        $num_escuela->setLabel('Número de la escuela')
-                    ->setRequired(false);
-
-        $ciudad_escuela = new Zend_Form_Element_Text('ciudad_escuela');
-        $ciudad_escuela->setLabel('Ciudad')
-                       ->setRequired(false);
-
-        $estado_escuela = new Zend_Form_Element_Select('estado_escuela');
-        $estado_escuela->setLabel('Estado')
-                         ->setRequired(false);
-        $estado_escuela->setMultiOptions(array(
-            'Oaxaca'
-        ));
-
-        $tipo_escuela = new Zend_Form_Element_Select('tipo_escuela');
-        $tipo_escuela->setLabel('Tipo de escuela')
-                     ->setRequired(false);
-        $tipo_escuela->addMultiOptions(array(
-            'Federal',
-            'Estatal',
-            'Privada'
-        ));
-
-        $agno_egreso = new Zend_Form_Element_Text('agno_egreso');
-        $agno_egreso->setLabel('Año de egreso')
-                    ->setRequired(false);
-
-        $promedio = new Zend_Form_Element_Text('promedio');
-        $promedio->setLabel('Promedio General')
-                 ->setRequired(false);
-
-        // Domicilio actual
+        // Dirección
         $calle = new Zend_Form_Element_Text('calle');
-        $calle->setLabel('Calle, Nº Interior y/o exterior')
-              ->setRequired(false);
+        $calle->setLabel('Calle: ')
+              ->setRequired(true);
 
         $colonia = new Zend_Form_Element_Text('colonia');
-        $colonia->setLabel('Colonia')
-                ->setRequired(false);
-
-        $localidad = new Zend_Form_Element_Text('localidad');
+        $colonia->setLabel('Colonia: ');
+        
+        $localidad = new Zend_Form_Element_Text('Localidad');
         $localidad->setLabel('Localidad')
-                  ->setRequired(false);
+                  ->setRequired(true);
 
-        $municipio = new Zend_Form_Element_Text('municipio');
+        $municipio = new Zend_Form_Element_Text('Municipio');
         $municipio->setLabel('Municipio')
-                  ->setRequired(false);
-
-        $codigoPostal = new Zend_Form_Element_Text('codigoPostal');
-        $codigoPostal->setLabel('Código Postal')
-                     ->setRequired(false);
+                  ->setRequired(true);
 
         $estado = new Zend_Form_Element_Text('Estado');
-        $estado->setLabel('Estado')
-               ->setRequired(false);
+        $estado->setLabel('Estado: ')
+               ->setRequired(true);
 
-        $correo_electronico = new Zend_Form_Element_Text('correo_electronico');
-        $correo_electronico->setLabel('Correo Electrónico (e-mail)')
-                           ->setRequired(false);
+        $codigo_postal = new Zend_Form_Element_Text('codigo');
+        $codigo_postal->setLabel('Codigo Postal');
 
-        $telefono = new Zend_Form_Element_Text('telefono');
-        $telefono->setLabel('Telefono')
-                 ->setRequired(false);
+        $email = new Zend_Form_Element_Text('e_mail');
+        $email->setLabel('E-mail: ');
 
-        $estadoCivil = new Zend_Form_Element_Select('estadoCivil');
-        $estadoCivil->setLabel('Estado Civil')
-                    ->setRequired(false);
-        $estadoCivil->addMultiOptions(array(
-            'Soltero',
-            'Viudo',
-            'Unión Libre',
-            'Divorciado'
-        ));
+        // Datos del tutor
 
-        $capacidadesDiferentes = new Zend_Form_Element_Select('capacidadesDiferentes');
-        $capacidadesDiferentes->setLabel('Capacidad Diferente')
-                              ->setRequired(false);
-        $capacidadesDiferentes->addMultiOptions(array(
-            'No tengo',
-            'Si tengo'
-        ));
+        $nombre_tutor = new Zend_Form_Element_Text('nombre_tutor');
+        $nombre_tutor->setLabel('Nombre: ');
 
-        $becado = new Zend_Form_Element_Select('becado');
-        $becado->setLabel('¿Cuentas con alguna beca?')
-               ->setRequired(false);
-        $becado->addMultiOptions(array(
-            'Si',
-            'No'
-        ));
+        $apellido_paternoTutor = new Zend_Form_Element_Text('apellido_paternoTutor');
+        $apellido_paternoTutor->setLabel('Apellido Paterno: ');
 
-        $foto = new Zend_Form_Element_File('foto');
-        $foto->setLabel('Sube tu foto aquí...');
-        $foto->setDestination('/tmp');
+        $apellido_maternoTutor = new Zend_Form_Element_Text('apellido_maternoTutor');
+        $apellido_maternoTutor->setLabel('Apellido Materno: ');
 
-        $aceptar = new Zend_Form_Element_Submit('aceptar');
-        $aceptar->setLabel('aceptar');
+        $calle_tutor = new Zend_Form_Element_Text('calle_tutor');
+        $calle_tutor->setLabel('Calle: ');
 
+        $colonia_tutor = new Zend_Form_Element_Text('colonia_tutor');
+        $colonia_tutor->setLabel('Colonia: ');
 
-        // Agregamos los elementos para mostrarlos
+        $localidad_tutor = new Zend_Form_Element_Text('localidad_tutor');
+        $localidad_tutor->setLabel('Localidad: ');
 
+        $estado_tutor = new Zend_Form_Element_Text('estado_tutor');
+        $estado_tutor->setLabel('Estado: ');
 
-        $elementos = array(
+        $codigoPostal_tutor = new Zend_Form_Element_Text('codigoPostal_tutor');
+        $codigoPostal_tutor->setLabel('Codigo Postal: ');
+
+        $telefono_tutor = new Zend_Form_Element_Text('telefono');
+        $telefono_tutor->setLabel('Teléfono: ');
+
+        $procedencia = new Zend_Form_Element_Select('procedencia');
+        $procedencia->setLabel('Procedencia: ');
+        $procedencia->addMultiOptions(
+                array(
+                    'CBTIs' => 'CBTIs',
+                    'CBTa' => 'CBTa',
+                    'IEBO' => 'IEBO',
+                    'CECyTE' => 'CECyTE',
+                    'Preparatoria' => 'Preparatoria',
+                    'Sistema abierto' => 'Sistema abierto',
+                    'CETIs' => 'CETIs',
+                    'COBAO' => 'COBAO',
+                    'OTRO' => 'OTRO'
+                )
+                );
+
+        $ubicacion = new Zend_Form_Element_Text('ubicacion');
+        $ubicacion->setLabel('Ubicación de la escuela de procedencia: ');
+
+        $promedios = array();
+
+        for($i = 60; $i<=100; $i++){
+            
+        }
+
+        $promedio_pre = new Zend_Form_Element_Select('promedio_pre');
+        $promedio_pre->setLabel('Promedio');
+        $promedio_pre->addMultiOptions(
+                array(
+                    $promedios
+                )
+                );
+
+        $secundaria = new Zend_Form_Element_Text('secundaria');
+        $secundaria->setLabel('Secundaria donde estudio: ');
+
+        $elements = array(
             $nombre,
             $apellido_paterno,
             $apellido_materno,
-            $dia_nacimiento,
-            $mes_nacimiento,
-            $agno_nacimiento,
-            $sexo,
-            $curp,
-            $nacionalidad,
-            $primera_carrera,
-            $segunda_opcion,
-            $escuela_anterior,
-            $num_escuela,
-            $ciudad_escuela,
-            $estado_escuela,
-            $tipo_escuela,
-            $agno_egreso,
-            $promedio,
-            $foto,
-            $aceptar
+            $estado_civil,
+            $calle,
+            $colonia,
+            $localidad,
+            $municipio,
+            $estado,
+            $codigo_postal,
+            $email,
+            $nombre_tutor,
+            $apellido_paternoTutor,
+            $apellido_maternoTutor,
+            $calle_tutor,
+            $colonia_tutor,
+            $localidad_tutor,
+            $estado_tutor,
+            $codigoPostal_tutor,
+            $telefono_tutor,
+            $procedencia,
+            $ubicacion,
+            $promedio_pre
         );
 
-        $this->addElements($elementos);
-
-        // Agregamos elementsGroup y establecemos sus decoradores
+        $this->addElements($elements);
 
         $this->addDisplayGroup(
                 array(
                     $nombre,
                     $apellido_paterno,
                     $apellido_materno,
-                    $dia_nacimiento,
-                    $mes_nacimiento,
-                    $agno_nacimiento,
-                    $sexo,
-                    $curp,
-                    $nacionalidad,
-                    $foto,
-                    $aceptar
+                    $estado_civil,
+                    $calle,
+                    $colonia,
+                    $localidad,
+                    $municipio,
+                    $estado,
+                    $codigo_postal,
+                    $email,
                 ),
-                'general',
+                'info_general',
                 array(
                     'legend' => 'Información General'
-                ));
-
-        $general = $this->getDisplayGroup('general');
-        $general->setDecorators(
-                array(
-                    'FormElements',
-                    'Fieldset',
-                ),
-                array(
-                    'HtmlTag',
-                    array(
-                        'tag' => 'div',
-                        'style' => 'border: solid black;
-                                    border-size:2px;'
-                    )
-                ));
+                )
+        );
 
         $this->addDisplayGroup(
                 array(
-                    $primera_carrera,
-                    $segunda_opcion
-                ),
-                'opciones' ,
-                array(
-                    'legend' => 'Opciones de ingreso'
-                ));
+                    $nombre_tutor,
+                    $apellido_paternoTutor,
+                    $apellido_maternoTutor,
+                    $calle_tutor,
+                    $colonia_tutor,
+                    $localidad_tutor,
+                    $estado_tutor,
+                    $codigoPostal_tutor,
+                    $telefono_tutor
+        ),
+                'tutor',
+                array('legend' => 'Datos del Tutor')
+                );
 
         $this->addDisplayGroup(
                 array(
-                    $escuela_anterior,
-                    $num_escuela,
-                    $tipo_escuela,
-                    $ciudad_escuela,
-                    $estado_escuela,
-                    $agno_egreso,
-                    $promedio
+                    $procedencia,
+                    $ubicacion,
+                    $promedio_pre
                 ),
-                'antecedente',
-                array(
-                    'legend' => 'Escuela de procedencia'
-                ));
+                'antecedentes',
+                array('legend' => 'Antecedentes')
+                );
     }
 }
 

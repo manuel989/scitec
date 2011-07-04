@@ -1,0 +1,114 @@
+<?php
+echo $this->doctype();
+//$this->placeholder('nombre')->set("Jorge García Miguel");
+//$this->placeholder('carrera')->set("Ing. Sistemas Computacionales");
+//$this->placeholder('semestre')->set("Octavo");
+?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <?php echo $this->headMeta(); ?>
+        <?php echo $this->headTitle(); ?>
+        <?php echo $this->headLink()->prependStylesheet($this->baseUrl() . "/css/reset.css"); ?>
+        <?php echo $this->headLink()->prependStylesheet($this->baseUrl() . "/css/text.css"); ?>
+        <?php echo $this->headLink()->prependStylesheet($this->baseUrl() . "/css/960.css"); ?>
+        <?= $this->headLink()->prependStylesheet($this->baseUrl() . "/css/scitec_index.css"); ?>
+        <?php echo $this->headLink()->prependStylesheet($this->baseUrl() . "/css/menu.css"); ?>
+
+        <script lenguage="javascript" src="<?php echo $this->baseUrl() . "/js/jquery.js" ?>"></script>
+
+        <script>
+            $(document).ready(function(){
+
+                $('#datos_div h6').click(function(){
+                   var estado = $('#datos').css('display');
+
+                   if(estado == 'none'){
+                       $('#datos').slideDown();
+                   }
+                   else{
+                       $('#datos').slideUp();
+                   }
+
+                });
+  
+            });
+
+
+        </script>
+
+        <script>
+            $(document).ready(function(){
+
+				$('ul.navigation ul').hide();
+				$('ul.navigation.ul:first').css('background-position', 'top');
+                /*$('ul.navigation ul:first').show();*/
+                $('ul.navigation li a').click(function(){
+                    var elementoActivo = $(this).next();
+                    if((elementoActivo.is('ul')) && (elementoActivo.is(':visible'))){
+                        return false;
+                    }
+                    if((elementoActivo.is('ul')) && (!elementoActivo.is(':visible'))){
+                        $('ul.navigation ul:visible').slideUp();
+                        elementoActivo.slideDown();
+                        return false;
+                    }
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+		<div class="container_12">
+			<div class="grid_4 suffix_8" id="logo"></div>
+			<div class="clear"></div>
+		</div>
+        <div class="container_12" id="wrapper">
+
+            <div class="grid_3" id="leftPanel">
+
+                <div id="content_leftpanel">
+                    <div id="datos_div">
+                        <h6>Usuario:</h6>
+                        <div id="datos">
+                            <b>Logeado como : </b>
+                            <?php
+                            //echo $this->placeholder('login');
+                            echo $this->placeholder('tipo');
+                            ?>
+                            <br></br>
+                            <b>Nombre: </b> <?= $this->placeholder('nombre'); ?><br></br>
+                            <b>Carrera: </b> <?= $this->placeholder('carrera'); ?><br></br>
+                            <b>Semestre: </b> <?= $this->placeholder('semestre'); ?>
+                        </div>
+                    </div>
+
+                    <div id="menu">
+			<?php
+			$my_acl = Zend_Registry::get('acl');
+			echo $this->navigation()->menu();
+			?>
+                    </div>
+                </div>
+
+            </div>
+            <div class="grid_9" id="content">
+                <div id="contenido">
+					<div id="bread">
+		                <?php echo $this->navigation()->breadcrumbs()->setLinkLast(false)->setMinDepth(0)->render(); ?>
+		            </div>
+                    <?php echo $this->layout()->content; ?>
+                </div>
+            </div>
+		<div class="clear"></div>
+        </div>
+        <!--<div id="mask"></div>
+        <div id="postit">
+            <form>
+                <?php $form = new Application_Form_Loggin();
+                echo $form;
+                ?>
+            </form>
+        </div>-->
+    </body>
+</html>

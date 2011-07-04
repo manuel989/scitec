@@ -1,0 +1,76 @@
+/* 
+    Document   : scitec_login
+    Created on : 07-jun-2011, 18:56:02
+    Author     : Punker
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+/* @override 
+	http://www.scitec.edu.mx/css/scitec_index.css
+	http://www.scitec.edu.mx/css/scitec_login.css
+*/
+
+html body{
+	background: url(../images/background.jpg) repeat-x;
+}
+
+#logo{
+    height: 80px;
+	background: url('../images/logo.png') no-repeat;
+}
+
+#contenido{
+	margin: 30px 10px 0 15px;
+}
+
+div#error{
+	padding: 10px;
+	width: 160px;
+	text-align: center;
+	height: 30px;
+	color: red;
+	background-color: #fdffab;
+	display: none;
+	position: absolute;
+}
+
+
+label{
+	float: left;
+}
+
+input{
+	display: inline;
+}
+
+form#loggin{
+	width: 25%;
+	margin: 40px auto;
+}
+
+#loggin label{
+	font-size: 11px;
+}
+
+#loggin legend{
+	text-align: center;
+	padding-bottom: 20px;
+	font-variant: small-caps;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+form#loggin input:focus{
+	border-color: #4fb7ff;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-bottom-width: 1px;
+	border-top-width: 1px;
+	border-style: ridge;
+}

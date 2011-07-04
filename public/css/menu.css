@@ -1,32 +1,49 @@
-/* 
-    Document   : menu
-    Created on : 27-ene-2011, 23:34:49
-    Author     : Punker
-    Description:
-        Purpose of the stylesheet follows.
-*/
+/* @override http://www.scitec.edu.mx/css/menu.css */
 
-/* 
-   TODO customize this sample style
-   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
-*/
+/* @group menu */
 
-·topnav ul, .topnav ul li
-{
-    display: inline;
-    padding: 0px;
+#menu{
+	margin-top: 20px;
 }
 
-.topnav ul li a
-{
-    border-width: 1px 1px 0px 1px;
-    border-style: solid;
-    border-color: #000;
-    padding: 5px;
-    background: #fff;
+ul.navigation {
+	margin: 0;
 }
 
-.breadcrums
-{
-    background-color: #000;
+ul.navigation, ul.navigation ul {
+	list-style-type: none;
+	font-size: 15px;
 }
+
+ul.navigation > li a:link, ul.navigation > li a:visited{
+	color: #3c3c3c;
+	padding-left: 10px;
+	/*padding: 8px;*/
+}
+
+ul.navigation  li a{
+	padding: 10px 0;
+	background: url(../images/normalmenu.jpg) no-repeat;
+}
+
+ul.navigation li a#menu-des{
+	height: 15px;
+	background: url(../images/buttonmenu.jpg) no-repeat;
+	background-position: top;
+}
+
+ul.navigation a{
+	display: block;
+	text-decoration: none;
+}
+
+ul.navigation ul li a{
+	background-color: #00b9ff;
+	background-image: none;
+}
+
+ul.navigation ul li a:link, ul.navigation ul li a:visited{
+	color: white;
+}
+
+/* @end */
