@@ -143,14 +143,14 @@ class IndexController extends Zend_Controller_Action
 		$dbAdapter = Zend_Db_Table_Abstract::getDefaultAdapter();
 		$auth = new Zend_Auth_Adapter_DbTable($dbAdapter);
 		// Seteamos nuestro adaptador
-		$auth->setTableName('sc_log')
-                     ->setIdentityColumn('log_nickname')
-                     ->setCredentialColumn('log_password')
+		$auth->setTableName('Usuarios')
+                     ->setIdentityColumn('Usuario')
+                     ->setCredentialColumn('Password')
                      ->setIdentity($user)
                      ->setCredential($pass);
 
 		$select = $auth->getDbSelect();
-		$select->where("log_rol = \"" . $tipo . "\"");
+		$select->where("Tipo_Usuario = \"" . $tipo . "\"");
 
 		//echo "Resultados" . Zend_Debug::dump($tipo);
 
@@ -170,10 +170,10 @@ class IndexController extends Zend_Controller_Action
 
                     $infoUsuario = Zend_Auth::getInstance()->getIdentity();
 
-                    $this->_application->currentRole = $infoUsuario->log_rol;
+                    $this->_application->currentRole = $infoUsuario->Tipo_Usuario;
                     $this->_application->setExpirationSeconds(600);
 
-                    switch($infoUsuario->log_rol)
+                    switch($infoUsuario->Tipo_Usuario)
                     {
                         case "alumno":
                             $this->_redirect('estudiantes/index/index');
